@@ -15,248 +15,193 @@ export default function BladeMasterPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
-    // In production: send to API/email
   };
 
   return (
-    <main className="min-h-screen bg-slate-900 text-white">
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background with gradient overlay */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?w=1920&q=80')`,
-          }}
+    <main className="bg-white text-gray-900">
+      {/* Navigation */}
+      <nav className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
+        <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+          <div className="font-bold text-xl tracking-tight">
+            BLADE<span className="text-emerald-600">MASTER</span>
+          </div>
+          <a href="#apply" className="bg-emerald-600 text-white px-5 py-2.5 rounded-lg font-medium hover:bg-emerald-700 transition-colors">
+            Solliciteer Nu
+          </a>
+        </div>
+      </nav>
+
+      {/* Hero - Full screen image */}
+      <section className="relative h-screen">
+        <img 
+          src="https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?w=1920&q=85&fit=crop"
+          alt="Wind turbine technician at work"
+          className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-slate-900/50 to-slate-900" />
+        <div className="absolute inset-0 bg-black/40" />
         
-        {/* Floating particles effect */}
-        <div className="absolute inset-0 overflow-hidden">
-          {[...Array(20)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute w-1 h-1 bg-cyan-400 rounded-full opacity-60 animate-pulse"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 3}s`,
-                animationDuration: `${2 + Math.random() * 3}s`
-              }}
-            />
-          ))}
-        </div>
-
-        <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
-          <div className="inline-block mb-6 px-4 py-2 bg-cyan-500/20 border border-cyan-500/50 rounded-full">
-            <span className="text-cyan-400 text-sm font-medium tracking-wide">⚡ WE'RE HIRING</span>
-          </div>
-          
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-6 leading-tight">
-            <span className="text-white">WORD</span>
-            <br />
-            <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
-              BLADE MASTER
-            </span>
-          </h1>
-          
-          <p className="text-xl md:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Werk op 150 meter hoogte. Op zee. Met de wind als collega.
-            <br />
-            <span className="text-cyan-400 font-semibold">Dit is geen kantoorjob.</span>
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a 
-              href="#solliciteer" 
-              className="group px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full font-bold text-lg hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 hover:scale-105"
-            >
-              Direct Solliciteren
-              <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">→</span>
-            </a>
-            <a 
-              href="#wat-is-blade-master" 
-              className="px-8 py-4 border border-slate-500 rounded-full font-medium text-lg hover:border-cyan-500 hover:text-cyan-400 transition-all"
-            >
-              Meer Info
-            </a>
-          </div>
-
-          {/* Stats */}
-          <div className="mt-16 grid grid-cols-3 gap-8 max-w-2xl mx-auto">
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-black text-cyan-400">150m</div>
-              <div className="text-slate-400 text-sm">Werkhoogte</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-black text-cyan-400">€4K+</div>
-              <div className="text-slate-400 text-sm">Salaris/maand</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-black text-cyan-400">100%</div>
-              <div className="text-slate-400 text-sm">Avontuur</div>
+        <div className="relative z-10 h-full flex flex-col justify-end pb-20 px-6">
+          <div className="max-w-4xl">
+            <p className="text-emerald-400 font-medium mb-4 tracking-wide">VACATURE</p>
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+              Word Blade Master
+            </h1>
+            <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl leading-relaxed">
+              Werk aan windturbines op land en zee. Repareer rotorbladen op 150 meter hoogte. 
+              Verdien €3.500 - €5.500 per maand.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <a href="#apply" className="bg-emerald-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-emerald-700 transition-colors">
+                Direct Solliciteren
+              </a>
+              <a href="#about" className="bg-white/10 backdrop-blur text-white border border-white/30 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white/20 transition-colors">
+                Meer Informatie
+              </a>
             </div>
           </div>
         </div>
+      </section>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-slate-500 rounded-full flex justify-center pt-2">
-            <div className="w-1.5 h-3 bg-cyan-400 rounded-full animate-pulse" />
+      {/* Stats Bar */}
+      <section className="bg-gray-900 text-white py-8">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div className="text-3xl md:text-4xl font-bold text-emerald-400">€5.500</div>
+              <div className="text-gray-400 mt-1">Max. maandsalaris</div>
+            </div>
+            <div>
+              <div className="text-3xl md:text-4xl font-bold text-emerald-400">150m</div>
+              <div className="text-gray-400 mt-1">Werkhoogte</div>
+            </div>
+            <div>
+              <div className="text-3xl md:text-4xl font-bold text-emerald-400">100%</div>
+              <div className="text-gray-400 mt-1">Opleiding vergoed</div>
+            </div>
+            <div>
+              <div className="text-3xl md:text-4xl font-bold text-emerald-400">24/7</div>
+              <div className="text-gray-400 mt-1">Offshore rotatie</div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* What is a Blade Master */}
-      <section id="wat-is-blade-master" className="py-24 px-4 bg-slate-900">
+      <section id="about" className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black mb-4">
-              Wat is een <span className="text-cyan-400">Blade Master</span>?
-            </h2>
-            <p className="text-xl text-slate-400 max-w-3xl mx-auto">
-              Je bent de chirurg van de windenergie. Zonder jou staan de turbines stil.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
-              <div className="space-y-6">
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center">
-                    <span className="text-2xl">🔧</span>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-2">Inspectie & Diagnose</h3>
-                    <p className="text-slate-400">Je inspecteert rotorbladen op scheuren, erosie en bliksemschade. Met touwtoegangstechnieken hang je aan de turbine terwijl je werkt.</p>
-                  </div>
-                </div>
-
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center">
-                    <span className="text-2xl">⚡</span>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-2">Reparatie & Onderhoud</h3>
-                    <p className="text-slate-400">Van kleine cosmetische fixes tot complete bladsecties vervangen. Je werkt met composietmaterialen, coating en geavanceerde lijmsystemen.</p>
-                  </div>
-                </div>
-
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center">
-                    <span className="text-2xl">🌊</span>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-2">Offshore Adventures</h3>
-                    <p className="text-slate-400">Werk op windparken in de Noordzee. Helikoptertransfers, verblijf op platforms, en de meest spectaculaire werkplek ter wereld.</p>
-                  </div>
-                </div>
-
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center">
-                    <span className="text-2xl">🎯</span>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-2">Impact Maken</h3>
-                    <p className="text-slate-400">Elke turbine die jij repareert levert schone energie voor duizenden huishoudens. Je werk maakt letterlijk het verschil.</p>
-                  </div>
-                </div>
-              </div>
+              <p className="text-emerald-600 font-medium mb-3">WAT DOE JE?</p>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                Rotorbladen repareren op grote hoogte
+              </h2>
+              <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                Als Blade Master inspecteer en repareer je de rotorbladen van windturbines. 
+                Je hangt in touwen aan de gondel terwijl je scheuren, erosie en bliksemschade herstelt. 
+                Werklocaties variëren van windparken op land tot offshore platforms in de Noordzee.
+              </p>
+              <ul className="space-y-4">
+                {[
+                  'Visuele en technische inspecties uitvoeren',
+                  'Composiet reparaties met glasvezel en epoxy',
+                  'Leading edge protection aanbrengen',
+                  'Bliksemafleiders controleren en repareren',
+                  'Documentatie en rapportages maken'
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <span className="mt-1.5 w-2 h-2 bg-emerald-600 rounded-full flex-shrink-0" />
+                    <span className="text-gray-700">{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
-
             <div className="relative">
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=800&q=80" 
-                  alt="Windturbine close-up"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="absolute -bottom-6 -right-6 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl p-6 shadow-xl">
-                <div className="text-3xl font-black">2000+</div>
-                <div className="text-sm opacity-80">Turbines in NL</div>
+              <img 
+                src="https://images.unsplash.com/photo-1548337138-e87d889cc369?w=800&q=85&fit=crop"
+                alt="Offshore windpark"
+                className="rounded-2xl shadow-2xl"
+              />
+              <div className="absolute -bottom-6 -left-6 bg-emerald-600 text-white p-6 rounded-xl shadow-lg">
+                <div className="text-3xl font-bold">2.500+</div>
+                <div className="text-emerald-100">Turbines in NL</div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Video/Image section */}
-      <section className="py-24 px-4 bg-slate-800/50">
-        <div className="max-w-6xl mx-auto">
-          <div className="relative aspect-video rounded-3xl overflow-hidden group">
-            <img 
-              src="https://images.unsplash.com/photo-1548337138-e87d889cc369?w=1920&q=80"
-              alt="Offshore windpark"
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent" />
-            <div className="absolute bottom-8 left-8 right-8">
-              <p className="text-2xl md:text-4xl font-black leading-tight">
-                "De beste werkplek?
-                <br />
-                <span className="text-cyan-400">150 meter boven de Noordzee.</span>"
-              </p>
-              <p className="text-slate-400 mt-4">— Elke Blade Master, ooit</p>
-            </div>
+      {/* Image break */}
+      <section className="relative h-96 md:h-[500px]">
+        <img 
+          src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1920&q=85&fit=crop"
+          alt="Windturbine bladen close-up"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent" />
+        <div className="relative z-10 h-full flex items-center px-6">
+          <div className="max-w-2xl">
+            <blockquote className="text-3xl md:text-4xl font-medium text-white leading-snug">
+              "Elke turbine die ik repareer levert stroom voor 3.000 huishoudens. 
+              Dat geeft voldoening."
+            </blockquote>
+            <p className="text-white/70 mt-4">— Mark, Blade Master sinds 2019</p>
           </div>
         </div>
       </section>
 
       {/* Requirements */}
-      <section className="py-24 px-4 bg-slate-900">
+      <section className="py-20 px-6 bg-gray-50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-black text-center mb-16">
-            Wat breng <span className="text-cyan-400">jij</span> mee?
-          </h2>
+          <div className="text-center mb-16">
+            <p className="text-emerald-600 font-medium mb-3">WAT VRAGEN WIJ?</p>
+            <h2 className="text-4xl md:text-5xl font-bold">Geschikt voor jou?</h2>
+          </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            {/* Must have */}
-            <div className="bg-slate-800 rounded-3xl p-8 border border-slate-700">
-              <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
-                <span className="w-10 h-10 bg-green-500/20 rounded-full flex items-center justify-center text-green-400">✓</span>
-                Must-haves
+            <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+              <h3 className="text-xl font-bold mb-6 flex items-center gap-3">
+                <span className="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center text-emerald-600 font-bold text-sm">✓</span>
+                Dit moet je hebben
               </h3>
               <ul className="space-y-4">
                 {[
-                  'Geen hoogtevrees (echt niet)',
-                  'Technisch inzicht & handvaardigheid',
-                  'Rijbewijs B (voor onshore)',
+                  'Geen hoogtevrees — echt niet',
+                  'Technisch inzicht en handig met gereedschap',
+                  'Rijbewijs B',
                   'Goede fysieke conditie',
-                  'Flexibel qua werktijden & locaties',
-                  'Basis Engels (voor offshore)'
+                  'Flexibel voor wisselende locaties en tijden',
+                  'Werkbare kennis van Engels'
                 ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-slate-300">
-                    <span className="w-2 h-2 bg-cyan-400 rounded-full" />
+                  <li key={i} className="flex items-start gap-3 text-gray-700">
+                    <span className="mt-2 w-1.5 h-1.5 bg-emerald-600 rounded-full flex-shrink-0" />
                     {item}
                   </li>
                 ))}
               </ul>
             </div>
 
-            {/* Nice to have */}
-            <div className="bg-slate-800 rounded-3xl p-8 border border-slate-700">
-              <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
-                <span className="w-10 h-10 bg-cyan-500/20 rounded-full flex items-center justify-center text-cyan-400">★</span>
-                Nice-to-haves
+            <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+              <h3 className="text-xl font-bold mb-6 flex items-center gap-3">
+                <span className="w-8 h-8 bg-gray-100 rounded-lg flex items-center justify-center text-gray-500 font-bold text-sm">+</span>
+                Mooi meegenomen
               </h3>
               <ul className="space-y-4">
                 {[
-                  'GWO certificaten (Basic Safety, etc.)',
-                  'IRATA/Rope Access ervaring',
-                  'Composiet reparatie kennis',
-                  'Ervaring in windenergie sector',
+                  'GWO certificaten (Basic Safety Training)',
+                  'IRATA of andere rope access ervaring',
+                  'Kennis van composietmaterialen',
+                  'Ervaring in windenergie of offshore',
                   'VCA certificaat',
-                  'Offshore medische keuring'
+                  'Geldige offshore medische keuring'
                 ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-slate-300">
-                    <span className="w-2 h-2 bg-slate-500 rounded-full" />
+                  <li key={i} className="flex items-start gap-3 text-gray-700">
+                    <span className="mt-2 w-1.5 h-1.5 bg-gray-400 rounded-full flex-shrink-0" />
                     {item}
                   </li>
                 ))}
               </ul>
-              <p className="mt-6 text-sm text-slate-500 italic">
-                Geen certificaten? Geen probleem — wij leiden je op!
+              <p className="mt-6 text-sm text-gray-500 bg-gray-50 p-3 rounded-lg">
+                Geen certificaten? Geen probleem. Wij betalen je volledige opleiding.
               </p>
             </div>
           </div>
@@ -264,158 +209,164 @@ export default function BladeMasterPage() {
       </section>
 
       {/* Benefits */}
-      <section className="py-24 px-4 bg-gradient-to-b from-slate-800 to-slate-900">
+      <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-black text-center mb-4">
-            Wat krijg <span className="text-cyan-400">jij</span>?
-          </h2>
-          <p className="text-center text-slate-400 mb-16 text-xl">
-            Meer dan alleen een salaris.
-          </p>
+          <div className="text-center mb-16">
+            <p className="text-emerald-600 font-medium mb-3">WAT BIEDEN WIJ?</p>
+            <h2 className="text-4xl md:text-5xl font-bold">Een baan met toekomst</h2>
+          </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { icon: '💰', title: '€3.500 - €5.000+', desc: 'Bruto per maand, afhankelijk van ervaring' },
-              { icon: '🎓', title: 'Volledige Opleiding', desc: 'GWO, IRATA, composiet — alles op onze kosten' },
-              { icon: '✈️', title: 'Reizen & Avontuur', desc: 'Werk door heel Europa, van Scotland tot Denemarken' },
-              { icon: '🏠', title: 'Verblijfsvergoeding', desc: 'Gratis accommodatie bij offshore projecten' },
-              { icon: '🚗', title: 'Lease Auto', desc: 'Volledig verzorgd, ook privé gebruik' },
-              { icon: '📈', title: 'Doorgroeimogelijkheden', desc: 'Van junior tot lead technician en verder' },
-              { icon: '🛡️', title: 'Goede Pensioenregeling', desc: 'Opbouwen voor later, wij matchen' },
-              { icon: '🏖️', title: '25+ Vakantiedagen', desc: 'Plus offshore rotatie geeft extra vrije tijd' },
-              { icon: '👥', title: 'Hecht Team', desc: 'Werken met gedreven collega\'s die dezelfde passie delen' },
+              { title: '€3.500 - €5.500', desc: 'Bruto maandsalaris afhankelijk van ervaring en certificaten' },
+              { title: 'Volledige opleiding', desc: 'GWO, IRATA, composiet reparatie — alles betaald door ons' },
+              { title: 'Reiskostenvergoeding', desc: 'Of een lease-auto, ook voor privégebruik' },
+              { title: 'Offshore toeslag', desc: 'Extra vergoeding voor werk op zee, plus gratis accommodatie' },
+              { title: '27 vakantiedagen', desc: 'Plus ADV-dagen en flexibele planning door rotatieschema' },
+              { title: 'Pensioenregeling', desc: 'Goede pensioenopbouw waar wij aan bijdragen' },
+              { title: 'Doorgroeimogelijkheden', desc: 'Van starter naar senior technician, teamleider of specialist' },
+              { title: 'Internationaal werk', desc: 'Projecten in heel Europa: Duitsland, UK, Denemarken, België' },
+              { title: 'Team & cultuur', desc: 'Hecht team van vakmensen die dezelfde passie delen' },
             ].map((benefit, i) => (
-              <div 
-                key={i}
-                className="bg-slate-800/50 backdrop-blur rounded-2xl p-6 border border-slate-700/50 hover:border-cyan-500/50 transition-colors group"
-              >
-                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">{benefit.icon}</div>
-                <h3 className="text-xl font-bold mb-2">{benefit.title}</h3>
-                <p className="text-slate-400">{benefit.desc}</p>
+              <div key={i} className="p-6 rounded-xl border border-gray-200 hover:border-emerald-200 hover:shadow-sm transition-all">
+                <h3 className="font-bold text-lg mb-2">{benefit.title}</h3>
+                <p className="text-gray-600 text-sm">{benefit.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
+      {/* CTA Image Section */}
+      <section className="relative py-32 px-6">
+        <img 
+          src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1920&q=85&fit=crop"
+          alt="Technician working"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-emerald-900/80" />
+        <div className="relative z-10 max-w-3xl mx-auto text-center text-white">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            Klaar voor een baan met uitzicht?
+          </h2>
+          <p className="text-xl text-emerald-100 mb-8">
+            Geen kantoor. Geen file. Wel een werkplek waar je de horizon ziet.
+          </p>
+          <a href="#apply" className="inline-block bg-white text-emerald-900 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-emerald-50 transition-colors">
+            Solliciteer Direct
+          </a>
+        </div>
+      </section>
+
       {/* Application Form */}
-      <section id="solliciteer" className="py-24 px-4 bg-slate-900">
-        <div className="max-w-2xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-black mb-4">
-              Klaar voor het <span className="text-cyan-400">avontuur</span>?
-            </h2>
-            <p className="text-xl text-slate-400">
-              Laat je gegevens achter en wij nemen contact op.
+      <section id="apply" className="py-20 px-6 bg-gray-50">
+        <div className="max-w-xl mx-auto">
+          <div className="text-center mb-10">
+            <p className="text-emerald-600 font-medium mb-3">SOLLICITEREN</p>
+            <h2 className="text-4xl font-bold mb-4">Interesse?</h2>
+            <p className="text-gray-600">
+              Laat je gegevens achter. We bellen je binnen 2 werkdagen.
             </p>
           </div>
 
           {submitted ? (
-            <div className="bg-green-500/20 border border-green-500/50 rounded-3xl p-8 text-center">
-              <div className="text-6xl mb-4">🎉</div>
-              <h3 className="text-2xl font-bold mb-2">Bedankt voor je interesse!</h3>
-              <p className="text-slate-300">
-                We nemen binnen 2 werkdagen contact met je op.
-              </p>
+            <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-8 text-center">
+              <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-3xl">✓</span>
+              </div>
+              <h3 className="text-xl font-bold mb-2">Bedankt!</h3>
+              <p className="text-gray-600">We nemen snel contact met je op.</p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid sm:grid-cols-2 gap-6">
+            <form onSubmit={handleSubmit} className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+              <div className="space-y-5">
+                <div className="grid sm:grid-cols-2 gap-5">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1.5">Naam *</label>
+                    <input
+                      type="text"
+                      required
+                      value={formData.name}
+                      onChange={(e) => setFormData({...formData, name: e.target.value})}
+                      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-colors"
+                      placeholder="Je naam"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1.5">Telefoon *</label>
+                    <input
+                      type="tel"
+                      required
+                      value={formData.phone}
+                      onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                      className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-colors"
+                      placeholder="06-12345678"
+                    />
+                  </div>
+                </div>
+
                 <div>
-                  <label className="block text-sm font-medium text-slate-400 mb-2">Naam *</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-1.5">E-mail *</label>
                   <input
-                    type="text"
+                    type="email"
                     required
-                    value={formData.name}
-                    onChange={(e) => setFormData({...formData, name: e.target.value})}
-                    className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-xl focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 outline-none transition-colors"
-                    placeholder="Je volledige naam"
+                    value={formData.email}
+                    onChange={(e) => setFormData({...formData, email: e.target.value})}
+                    className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-colors"
+                    placeholder="je@email.nl"
                   />
                 </div>
+
                 <div>
-                  <label className="block text-sm font-medium text-slate-400 mb-2">Telefoon *</label>
-                  <input
-                    type="tel"
-                    required
-                    value={formData.phone}
-                    onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                    className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-xl focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 outline-none transition-colors"
-                    placeholder="06-12345678"
+                  <label className="block text-sm font-medium text-gray-700 mb-1.5">Ervaring</label>
+                  <select
+                    value={formData.experience}
+                    onChange={(e) => setFormData({...formData, experience: e.target.value})}
+                    className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-colors"
+                  >
+                    <option value="">Kies een optie</option>
+                    <option value="starter">Starter — geen ervaring</option>
+                    <option value="technisch">Technische achtergrond</option>
+                    <option value="hoogte">Ervaring met hoogtewerk</option>
+                    <option value="wind">Ervaring in windenergie</option>
+                    <option value="blade">Blade Technician ervaring</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1.5">Waarom wil je Blade Master worden?</label>
+                  <textarea
+                    rows={3}
+                    value={formData.message}
+                    onChange={(e) => setFormData({...formData, message: e.target.value})}
+                    className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-colors resize-none"
+                    placeholder="Optioneel"
                   />
                 </div>
-              </div>
 
-              <div>
-                <label className="block text-sm font-medium text-slate-400 mb-2">E-mail *</label>
-                <input
-                  type="email"
-                  required
-                  value={formData.email}
-                  onChange={(e) => setFormData({...formData, email: e.target.value})}
-                  className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-xl focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 outline-none transition-colors"
-                  placeholder="jouw@email.nl"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-slate-400 mb-2">Relevante ervaring</label>
-                <select
-                  value={formData.experience}
-                  onChange={(e) => setFormData({...formData, experience: e.target.value})}
-                  className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-xl focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 outline-none transition-colors"
+                <button
+                  type="submit"
+                  className="w-full bg-emerald-600 text-white py-4 rounded-lg font-semibold text-lg hover:bg-emerald-700 transition-colors"
                 >
-                  <option value="">Selecteer...</option>
-                  <option value="geen">Geen ervaring (starter)</option>
-                  <option value="technisch">Technische achtergrond (anders)</option>
-                  <option value="hoogte">Ervaring met hoogtewerk</option>
-                  <option value="wind">Ervaring in windenergie</option>
-                  <option value="blade">Ervaring als Blade Technician</option>
-                </select>
+                  Verstuur
+                </button>
               </div>
-
-              <div>
-                <label className="block text-sm font-medium text-slate-400 mb-2">Motivatie (optioneel)</label>
-                <textarea
-                  rows={4}
-                  value={formData.message}
-                  onChange={(e) => setFormData({...formData, message: e.target.value})}
-                  className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-xl focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 outline-none transition-colors resize-none"
-                  placeholder="Waarom wil jij Blade Master worden?"
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="w-full py-4 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl font-bold text-lg hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300 hover:scale-[1.02]"
-              >
-                Verstuur Sollicitatie →
-              </button>
-
-              <p className="text-center text-sm text-slate-500">
-                Door te solliciteren ga je akkoord met onze privacyverklaring.
-              </p>
             </form>
           )}
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-4 border-t border-slate-800">
-        <div className="max-w-6xl mx-auto text-center">
-          <div className="text-2xl font-black mb-4">
-            <span className="text-cyan-400">BLADE</span>MASTER
+      <footer className="bg-gray-900 text-white py-12 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="font-bold text-xl">
+              BLADE<span className="text-emerald-400">MASTER</span>
+            </div>
+            <div className="text-gray-400 text-sm">
+              © 2025 · De toekomst draait op wind
+            </div>
           </div>
-          <p className="text-slate-500 mb-6">
-            De toekomst van energie draait op wind. En jij houdt die draaiend.
-          </p>
-          <div className="flex justify-center gap-6 text-slate-400">
-            <a href="#" className="hover:text-cyan-400 transition-colors">Privacy</a>
-            <a href="#" className="hover:text-cyan-400 transition-colors">Contact</a>
-            <a href="#" className="hover:text-cyan-400 transition-colors">Over ons</a>
-          </div>
-          <p className="mt-8 text-slate-600 text-sm">
-            © 2025 Blade Master Recruitment. Powered by wind. ⚡
-          </p>
         </div>
       </footer>
     </main>
